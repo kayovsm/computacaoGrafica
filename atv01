@@ -1,0 +1,85 @@
+//Desafio 1
+
+var vermelho=[255,0,0];
+var verde=[0,255,0];
+var azul=[0,0,255];
+
+function quadrado(cor){
+    fill(cor[0],cor[1],cor[2]);
+    rect(0, 0, 100, 100);
+}
+
+var i=0;
+var drawScene=function() {
+    background(255, 255, 255);
+    pushMatrix();
+        translate(0, 0);
+        quadrado(vermelho);
+        translate(i, i);
+        quadrado(azul);
+        translate(i, i);
+        quadrado(verde);
+    popMatrix();
+};
+
+keyPressed=function(){
+    if(key.toString()==='a'){
+        if(i<50){
+            i+=5;
+        }
+    }
+    if(key.toString()==='d'){
+        if(i>-50){
+            i-=5;
+        }
+    }
+    if(key.toString()==='q'){
+        resetMatrix();
+    }
+    drawScene();
+};
+
+drawScene();
+
+
+
+//Desafio 2
+
+var vermelho=[255,0,0];
+var verde=[0,255,0];
+var azul=[0,0,255];
+
+function quadrado(cor){
+    fill(cor[0],cor[1],cor[2]);
+    rect(0, 0, 100, 100);
+}
+
+var i=100;
+var drawScene=function() {
+    background(255, 255, 255);
+    pushMatrix();
+        translate(i, i);
+        quadrado(vermelho);
+        translate(i, 0);
+        quadrado(azul);
+    popMatrix();
+};
+
+keyPressed=function(){
+    if(key.toString()==='a'){
+        if(i<50){
+            i+=5;
+        }
+    }
+    if(key.toString()==='d'){
+        if(i>-50){
+            i-=5;
+        }
+    }
+    if(key.toString()==='q'){
+        resetMatrix();
+    }
+    drawScene();
+};
+
+drawScene();
